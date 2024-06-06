@@ -1,0 +1,163 @@
+
+@import url('https://fonts.googleapis.com/css2?family=Cinzel:wght@400..900&display=swap');
+
+
+.navbar-brand {
+  font-family: "Cinzel", serif;
+}
+
+
+.bg-navbar {
+    background-color: black;
+}
+
+.hero-image {
+    background-image: url("../img/bg1.jpg");
+    height: 100vh;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    position: relative;
+}
+
+
+.hero-text {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100%;
+    color: white;
+    flex-direction: column;
+    font-size: 30px; 
+    font-family: "Cinzel", serif;
+}
+
+.hero-text p {
+  font-size: 20px;
+  font-weight: bold;
+  color: white;
+}
+
+  
+.about, 
+.menu,
+.contact
+{
+  padding: 8rem 7% 1.4rem;
+}
+
+.about h2 {
+  text-align: center;
+  font-size: 2.6rem;
+  margin-bottom: 3rem;
+  color: white;
+  font-family: "Cinzel", serif;
+}
+
+.about h2 span, 
+.menu h2 span,
+.contact h2 span {
+  color: var(--primary);
+}
+
+
+.about .row {
+  display: flex;
+}
+
+.about .row .about-img {
+  width: 50%;
+}
+.about .row .about-img img {
+  width: 100%;
+}
+
+.about .row .content {
+  width: 50%;
+  color: white;
+}
+
+
+.about .row .content h3 {
+  font-size: 1.6rem;
+  margin-bottom: 1rem;
+
+}
+
+.about .row .content p {
+  margin-bottom: 0.8rem;
+  font-size: 1.6rem;
+  font-weight: 100;
+  line-height: 1.6rem;
+} 
+
+/* FOOTER */
+
+footer {
+  padding: 2rem;
+  background-color: black;
+}
+
+footer a{
+  color: #ffff;
+}
+
+footer a:hover {
+  color: #00abf0;
+  transition: 0.3s;
+}
+
+.main-footer {
+  display: flex;
+  justify-content: space-between;
+  border-bottom: 1px solid slategrey;
+  padding-bottom: 2rem;
+}
+
+.main-footer h1 {
+  font-family: "Cinzel", serif;
+}
+
+.footer-contact > * {
+  margin-bottom: 0.5rem;
+}
+
+.footer-services > * {
+  margin-bottom: 0.5rem;
+}
+
+.footer-links {
+  display: flex;
+  flex-direction: column;
+}
+
+.footer-links > * {
+  margin-bottom: 0.5rem;
+}
+.copyright {
+  text-align: center;
+  margin: 2rem 0 1rem 0;
+}
+.copyright a {
+  font-size: 2.5rem;
+}
+
+
+.container-carousel {
+  margin: 0 20rem;
+  margin-top: 100px;
+}
+
+.about-carousel h2 {
+  text-align: center;
+  color: white;
+  font-family: "Cinzel", serif;
+  margin-top: 3rem;
+  font-size: 40px;
+
+}
+
+.menu h2 {
+  font-family: "Cinzel", serif;
+
+}
