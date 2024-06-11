@@ -4,5 +4,5 @@ require '../functions.php';
 
 $id = $_GET['id'];
 if (hapus($id) > 0) {
-    header("location:index.php");
+    header("location:customer.php");
 }

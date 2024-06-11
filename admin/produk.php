@@ -7,7 +7,7 @@ require('../functions.php');
 //   header('location:../login.php');
 // }
 
-$user = query("SELECT * FROM user");
+$movies = query("SELECT * FROM movie");
 
 
 ?>
@@ -68,7 +68,7 @@ $user = query("SELECT * FROM user");
             </a>
           </li>
           <li>
-            <a href="#" class="nav-link nav-hov">
+            <a href="customer.php" class="nav-link nav-hov">
               <i class="bi bi-person-circle"></i>
               Customers
             </a>
@@ -98,39 +98,37 @@ $user = query("SELECT * FROM user");
         <?php
         if (isset($_POST['search'])) {
           $keyword = $_POST['keyword'];
-          $user = live_search('user', $keyword, 'username');
+          $movies = live_search('movie', $keyword, 'judul');
         }
         ?>
 
-        <button onclick="document.location.href='tambah_user.php'" class="btn btn-primary ff">Tambah Data</button>
+        <button onclick="document.location.href='tambah_produk.php'" class="btn btn-primary ff">Tambah Data</button>
         <form class="d-flex" role="search" method="POST">
-          <input class="form-control me-2 keyword" type="text" placeholder="Search" aria-label="Search" name="keyword">
+          <input class="form-control me-2" type="text" placeholder="Search" aria-label="Search" name="keyword">
           <button class="btn btn-primary" type="submit" name="search">Search</button>
         </form>
       </div>
-      <table class="table caption-top text-white">
+      <table class=" table caption-top text-white">
         <thead>
           <tr>
             <th scope="col">#</th>
-            <th scope="col">Username</th>
+            <th scope="col">Judul</th>
             <th scope="col">Image</th>
-            <th scope="col">Password</th>
-            <th scope="col">Email</th>
+            <th scope="col">Harga</th>
             <th scope="col">Action</th>
           </tr>
         </thead>
         <tbody>
           <?php
           $id = 1;
-          foreach ($user as $u) { ?>
+          foreach ($movies as $movie) { ?>
 
             <tr>
               <th scope="row"><?= $id++ ?></th>
-              <td><?= $u['username'] ?></td>
-              <td><img src="../img/<?= $u['gambar'] ?>" alt="" width="50" height="50"></td>
-              <td><?= $u['password'] ?></td>
-              <td><?= $u['email'] ?></td>
-              <td><a href="edit_user.php?id=<?= $u['id'] ?>" class="btn btn-primary me-2">edit</a><a href="hapus_user.php?id=<?= $u['id'] ?>" class="btn btn-danger">delete</a></td>
+              <td><?= $movie['judul'] ?></td>
+              <td><img src="../img/<?= $movie['gambar'] ?>" alt="" width="50" height="50"></td>
+              <td><?= $movie['harga'] ?></td>
+              <td><a href="edit_produk.php?id_movie=<?= $movie['id_movie'] ?>" class="btn btn-primary me-2">edit</a><a href="hapus_produk.php?id_movie=<?= $movie['id_movie'] ?>" class="btn btn-danger">delete</a></td>
             </tr>
 
           <?php } ?>
@@ -146,7 +144,6 @@ $user = query("SELECT * FROM user");
 
   <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous"></script>
   <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
-  <script src="../js/search.js"></script>
 </body>
 
 </html>

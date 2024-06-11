@@ -112,11 +112,12 @@ function tambah($data)
     $password = htmlspecialchars($data["password"]);
     $id_role = htmlspecialchars($data["id_role"]);
     $password_baru = password_hash($password, PASSWORD_DEFAULT);
+    $image = upload();
 
 
     $query = "INSERT INTO user
             VALUES
-            (null, '', '$username', '$email', '$password_baru', '$id_role')";
+            (null, '$image', '$username', '$email', '$password_baru', '$id_role')";
     mysqli_query($conn, $query) or die(mysqli_error($conn));
 
     return mysqli_affected_rows($conn);
@@ -134,7 +135,15 @@ function hapus($id)
     return mysqli_affected_rows($conn);
 }
 
+// FUNCTION HAPUS PRODUK
 
+function hapus_produk($id)
+{
+    $conn = koneksi();
+
+    mysqli_query($conn, "DELETE FROM movie WHERE id_movie = $id");
+    return mysqli_affected_rows($conn);
+}
 
 
 // FUNCTION UBAH DATA
@@ -148,16 +157,146 @@ function ubah($data)
     $password = htmlspecialchars($data['password']);
     $id_role = htmlspecialchars($data['id_role']);
     $email = htmlspecialchars($data['email']);
+    $old_image = htmlspecialchars($data['old_image']);
+
+    if ($_FILES['image']['error'] === 4) {
+        $gambar = $old_image;
+    } else {
+        $gambar = upload();
+        if (!$gambar) {
+            return false;
+        }
+    }
 
     $password_baru = password_hash($password, PASSWORD_DEFAULT);
 
     $query = "UPDATE user SET
-               gambar = '',
+               gambar = '$gambar',
                username = '$username',
                email = '$email', 
                password = '$password_baru', 
                id_role = '$id_role'
                WHERE id = $id
+                ";
+    mysqli_query($conn, $query) or die(mysqli_error($conn));
+
+    return mysqli_affected_rows($conn);
+}
+
+// FUNCTION SEARCH
+function live_search($table, $keyword, $where)
+{
+
+    $query = "SELECT * FROM $table WHERE $where LIKE '%$keyword%'";
+
+    $result = mysqli_query(koneksi(), $query);
+
+    return $result;
+}
+
+
+// FUNCTION UPLOAD DATA
+
+function upload()
+{
+    $nama_file = $_FILES['image']['name'];
+    $tipe_file = $_FILES['image']['type'];
+    $ukuran_file = $_FILES['image']['size'];
+    $error = $_FILES['image']['error'];
+    $tmp_file = $_FILES['image']['tmp_name'];
+
+    if ($error == 4) {
+        return 'nophoto.png';
+    }
+
+    $daftar_gambar = ['jpg', 'jpeg', 'png'];
+    $ekstensi_file = explode('.', $nama_file);
+    $ekstensi_file = strtolower(end($ekstensi_file));
+    if (!in_array($ekstensi_file, $daftar_gambar)) {
+        echo "<script>
+        alert('yang anda pilih bukan gambar!');
+          </script>";
+        return false;
+    }
+
+    // cek type file
+    if ($tipe_file != 'image/jpeg' && $tipe_file != 'image/png') {
+        echo "<script>
+        alert('yang anda pilih bukan gambar!');
+          </script>";
+        return false;
+    }
+
+    // cek ukuran file
+    if ($ukuran_file > 5000000) {
+        echo "<script>
+        alert('ukuran gambar terlalu besar!');
+          </script>";
+        return false;
+    }
+
+    // lolos pengecekan siap upload file
+    $nama_file_baru = uniqid();
+    $nama_file_baru .= '.';
+    $nama_file_baru .= $ekstensi_file;
+
+    if (!move_uploaded_file($tmp_file, '../img/' . $nama_file_baru)) {
+        return false;
+    }
+
+    return $nama_file_baru;
+}
+
+
+
+// FUNCTION TAMBAH PRODUK
+
+function tambah_produk($data)
+{
+    $conn = koneksi();
+
+    // $gambar = htmlspecialchars($data["nama"]);
+    $judul = htmlspecialchars($data["judul"]);
+    $harga = htmlspecialchars($data["harga"]);
+    $image = upload();
+
+
+    $query = "INSERT INTO movie
+            VALUES
+            (null, '$judul', '$harga', '$image')";
+    mysqli_query($conn, $query) or die(mysqli_error($conn));
+
+    return mysqli_affected_rows($conn);
+}
+
+
+
+
+function ubah_produk($data)
+{
+    $conn = koneksi();
+
+    $id = htmlspecialchars($data['id']);
+    $judul = htmlspecialchars($data['judul']);
+    $harga = htmlspecialchars($data['harga']);
+    $old_image = htmlspecialchars($data['old_image']);
+
+    if ($_FILES['image']['error'] === 4) {
+        $gambar = $old_image;
+    } else {
+        $gambar = upload();
+        if (!$gambar) {
+            return false;
+        }
+    }
+
+
+
+    $query = "UPDATE movie SET
+               judul = '$judul',
+               harga = '$harga',
+               gambar = '$gambar' 
+               WHERE id_movie = $id
                 ";
     mysqli_query($conn, $query) or die(mysqli_error($conn));
 

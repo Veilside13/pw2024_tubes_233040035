@@ -143,144 +143,104 @@ require "./functions.php";
 
   <section id="menu" class="menu text-center text-white">
     <h2>NOW PLAYING</h2>
-
-
-    <div class="row justify-content-center gap-5 pt-3">
-      <div class="card text-center bg-transparent" style="width: 13rem;">
-        <img src="img/poster.1.jpg" class="card-img-top rounded shadow-lg" alt="...">
-        <div class="card-body text-white">
-          <p class="card-text fw-bold">The Fast & The Furious</p>
-          <a href="#" class="btn btn-dark">IDR | 40.000</a> <br>
-          <a href="#" class="btn btn-danger mt-3">BUY</a> <br>
-          <a href="" class="cart-add fs-1"><i class='bx bxs-cart-add' style='color:#500505'></i></a>
-        </div>
-      </div>
-      <div class="card text-center bg-transparent" style="width: 13rem;">
-        <img src="img/poster.2.jpg" class="card-img-top rounded shadow-lg" alt="...">
-        <div class="card-body text-white">
-          <p class="card-text fw-bold">Fast Furious Tokyo Drift</p>
-          <a href="#" class="btn btn-dark">IDR | 40.000</a> <br>
-          <a href="#" class="btn btn-danger mt-3">BUY</a> <br>
-          <a href="" class="cart-add fs-1"><i class='bx bxs-cart-add' style='color:#500505'></i></a>
-        </div>
-      </div>
-      <div class="card text-center bg-transparent" style="width: 13rem;">
-        <img src="img/poster.4.jpg" class="card-img-top rounded shadow-lg" alt="...">
-        <div class="card-body text-white">
-          <p class="card-text fw-bold mt-3">The Expendables 2</p>
-          <a href="#" class="btn btn-dark mt-3">IDR | 40.000</a> <br>
-          <a href="#" class="btn btn-danger mt-3">BUY</a> <br>
-          <a href="" class="cart-add fs-1"><i class='bx bxs-cart-add' style='color:#500505'></i></a>
-        </div>
-      </div>
-      <div class="card text-center bg-transparent" style="width: 13rem;">
-        <img src="img/poster.5.jpg" class="card-img-top rounded shadow-lg" alt="...">
-        <div class="card-body text-white">
-          <p class="card-text fw-bold mt-3">Sons Of Anarchy</p>
-          <a href="#" class="btn btn-dark mt-3">IDR | 40.000</a> <br>
-          <a href="#" class="btn btn-danger mt-3">BUY</a> <br>
-          <a href="" class="cart-add fs-1"><i class='bx bxs-cart-add' style='color:#500505'></i></a>
-        </div>
-      </div>
-      <div class="card text-center bg-transparent" style="width: 13rem;">
-        <img src="img/poster.6.jpg" class="card-img-top rounded shadow-lg" alt="...">
-        <div class="card-body text-white">
-          <p class="card-text fw-bold">Fast & Furious 5</p>
-          <a href="#" class="btn btn-dark">IDR | 40.000</a> <br>
-          <a href="#" class="btn btn-danger mt-3">BUY</a> <br>
-          <a href="" class="cart-add fs-1"><i class='bx bxs-cart-add' style='color:#500505'></i></a>
-        </div>
-      </div>
-      <div class="card text-center bg-transparent" style="width: 13rem;">
-        <img src="img/poster.7.jpg" class="card-img-top rounded shadow-lg" alt="...">
-        <div class="card-body text-white">
-          <p class="card-text fw-bold">F9 The Fast Saga</p>
-          <a href="#" class="btn btn-dark">IDR | 40.000</a> <br>
-          <a href="#" class="btn btn-danger mt-3">BUY</a> <br>
-          <a href="" class="cart-add fs-1"><i class='bx bxs-cart-add' style='color:#500505'></i></a>
-        </div>
-      </div>
-      <div class="card text-center bg-transparent" style="width: 13rem;">
-        <img src="img/poster.8.jpg" class="card-img-top rounded shadow-lg" alt="...">
-        <div class="card-body text-white">
-          <p class="card-text fw-bold mt-3">Fast & Furious 6</p>
-          <a href="#" class="btn btn-dark mt-2">IDR | 40.000</a> <br>
-          <a href="#" class="btn btn-danger mt-3">BUY</a> <br>
-          <a href="" class="cart-add fs-1"><i class='bx bxs-cart-add' style='color:#500505'></i></a>
-        </div>
-      </div>
-
-
-      <!-- FOOTER -->
-
-      <div class="container">
-        <footer class="pt-5">
-          <div class="row">
-            <div class="col-6 col-md-2 mb-3">
-              <h5>About Us</h5>
-              <ul class="nav flex-column">
-                <li class="nav-item mb-2"><a href="#" class="nav-link p-0 text-white">Home</a></li>
-                <li class="nav-item mb-2"><a href="#" class="nav-link p-0 text-white">Home</a></li>
-                <li class="nav-item mb-2"><a href="#" class="nav-link p-0 text-white">Home</a></li>
-                <li class="nav-item mb-2"><a href="#" class="nav-link p-0 text-white">Home</a></li>
-                <li class="nav-item mb-2"><a href="#" class="nav-link p-0 text-white">Home</a></li>
-
-              </ul>
-            </div>
-
-            <div class="col-6 col-md-2 mb-3">
-              <h5>Section</h5>
-              <ul class="nav flex-column">
-                <li class="nav-item mb-2"><a href="#" class="nav-link p-0 text-white">Home</a></li>
-                <li class="nav-item mb-2"><a href="#" class="nav-link p-0 text-white">Features</a></li>
-                <li class="nav-item mb-2"><a href="#" class="nav-link p-0 text-white">Pricing</a></li>
-                <li class="nav-item mb-2"><a href="#" class="nav-link p-0 text-white">FAQs</a></li>
-                <li class="nav-item mb-2"><a href="#" class="nav-link p-0 text-white">About</a></li>
-              </ul>
-            </div>
-
-            <div class="col-6 col-md-2 mb-3">
-              <h5>Section</h5>
-              <ul class="nav flex-column">
-                <li class="nav-item mb-2"><a href="#" class="nav-link p-0 text-white">Home</a></li>
-                <li class="nav-item mb-2"><a href="#" class="nav-link p-0 text-white">Features</a></li>
-                <li class="nav-item mb-2"><a href="#" class="nav-link p-0 text-white">Pricing</a></li>
-                <li class="nav-item mb-2"><a href="#" class="nav-link p-0 text-white">FAQs</a></li>
-                <li class="nav-item mb-2"><a href="#" class="nav-link p-0 text-white">About</a></li>
-              </ul>
-            </div>
-
-            <div class="col-md-5 offset-md-1 mb-3">
-              <form>
-                <h5>Subscribe to our newsletter</h5>
-                <p>Monthly digest of what's new and exciting from us.</p>
-                <div class="d-flex flex-column flex-sm-row w-100 gap-2">
-                  <label for="newsletter1" class="visually-hidden">Email address</label>
-                  <input id="newsletter1" type="text" class="form-control" placeholder="Email address">
-                  <button class="btn btn-primary" type="button">Subscribe</button>
-                </div>
-              </form>
-            </div>
+    <form class="container d-flex w-50 my-4" role="search">
+      <input class="form-control me-2 keyword" type="text" placeholder="Search" aria-label="Search" name="keyword">
+      <button class="btn btn-danger" type="submit" name="search">Search</button>
+    </form>
+    <div class="row justify-content-center gap-5 pt-3 movie">
+      <?php
+      $movies = query('SELECT * FROM movie');
+      foreach ($movies as $movie) :
+      ?>
+        <div class="card text-center bg-transparent" style="width: 13rem;">
+          <img src="img/<?= $movie['gambar'] ?>" class="card-img-top rounded shadow-lg" alt="...">
+          <div class="card-body text-white">
+            <p class="card-text fw-bold"><?= $movie['judul'] ?></p>
+            <a href="#" class="btn btn-dark">IDR | <?= $movie['harga'] ?></a> <br>
+            <a href="#" class="btn btn-danger mt-3">BUY</a> <br>
+            <a href="" class="cart-add fs-1"><i class='bx bxs-cart-add' style='color:#500505'></i></a>
           </div>
+        </div>
 
-          <div class="d-flex flex-column flex-sm-row justify-content-between py-4 my-4 border-top">
-            <p>© 2024 Company, Inc. All rights reserved.</p>
-            <ul class="list-unstyled d-flex">
-              <li class="ms-3"><a class="link-body-emphasis" href="#"><svg class="bi" width="24" height="24">
-                    <use xlink:href="#twitter"></use>
-                  </svg></a></li>
-              <li class="ms-3"><a class="link-body-emphasis" href="#"><svg class="bi" width="24" height="24">
-                    <use xlink:href="#instagram"></use>
-                  </svg></a></li>
-              <li class="ms-3"><a class="link-body-emphasis" href="#"><svg class="bi" width="24" height="24">
-                    <use xlink:href="#facebook"></use>
-                  </svg></a></li>
+
+      <?php
+      endforeach;
+      ?>
+    </div>
+
+
+
+
+    <!-- FOOTER -->
+
+    <div class="container">
+      <footer class="pt-5">
+        <div class="row">
+          <div class="col-6 col-md-2 mb-3">
+            <h5>About Us</h5>
+            <ul class="nav flex-column">
+              <li class="nav-item mb-2"><a href="#" class="nav-link p-0 text-white">Home</a></li>
+              <li class="nav-item mb-2"><a href="#" class="nav-link p-0 text-white">Home</a></li>
+              <li class="nav-item mb-2"><a href="#" class="nav-link p-0 text-white">Home</a></li>
+              <li class="nav-item mb-2"><a href="#" class="nav-link p-0 text-white">Home</a></li>
+              <li class="nav-item mb-2"><a href="#" class="nav-link p-0 text-white">Home</a></li>
+
             </ul>
           </div>
-        </footer>
-      </div>
 
+          <div class="col-6 col-md-2 mb-3">
+            <h5>Section</h5>
+            <ul class="nav flex-column">
+              <li class="nav-item mb-2"><a href="#" class="nav-link p-0 text-white">Home</a></li>
+              <li class="nav-item mb-2"><a href="#" class="nav-link p-0 text-white">Features</a></li>
+              <li class="nav-item mb-2"><a href="#" class="nav-link p-0 text-white">Pricing</a></li>
+              <li class="nav-item mb-2"><a href="#" class="nav-link p-0 text-white">FAQs</a></li>
+              <li class="nav-item mb-2"><a href="#" class="nav-link p-0 text-white">About</a></li>
+            </ul>
+          </div>
 
+          <div class="col-6 col-md-2 mb-3">
+            <h5>Section</h5>
+            <ul class="nav flex-column">
+              <li class="nav-item mb-2"><a href="#" class="nav-link p-0 text-white">Home</a></li>
+              <li class="nav-item mb-2"><a href="#" class="nav-link p-0 text-white">Features</a></li>
+              <li class="nav-item mb-2"><a href="#" class="nav-link p-0 text-white">Pricing</a></li>
+              <li class="nav-item mb-2"><a href="#" class="nav-link p-0 text-white">FAQs</a></li>
+              <li class="nav-item mb-2"><a href="#" class="nav-link p-0 text-white">About</a></li>
+            </ul>
+          </div>
+
+          <div class="col-md-5 offset-md-1 mb-3">
+            <form>
+              <h5>Subscribe to our newsletter</h5>
+              <p>Monthly digest of what's new and exciting from us.</p>
+              <div class="d-flex flex-column flex-sm-row w-100 gap-2">
+                <label for="newsletter1" class="visually-hidden">Email address</label>
+                <input id="newsletter1" type="text" class="form-control" placeholder="Email address">
+                <button class="btn btn-primary" type="button">Subscribe</button>
+              </div>
+            </form>
+          </div>
+        </div>
+
+        <div class="d-flex flex-column flex-sm-row justify-content-between py-4 my-4 border-top">
+          <p>© 2024 Company, Inc. All rights reserved.</p>
+          <ul class="list-unstyled d-flex">
+            <li class="ms-3"><a class="link-body-emphasis" href="#"><svg class="bi" width="24" height="24">
+                  <use xlink:href="#twitter"></use>
+                </svg></a></li>
+            <li class="ms-3"><a class="link-body-emphasis" href="#"><svg class="bi" width="24" height="24">
+                  <use xlink:href="#instagram"></use>
+                </svg></a></li>
+            <li class="ms-3"><a class="link-body-emphasis" href="#"><svg class="bi" width="24" height="24">
+                  <use xlink:href="#facebook"></use>
+                </svg></a></li>
+          </ul>
+        </div>
+      </footer>
+    </div>
+
+    <script src="js/search_movie.js"></script>
 </body>
 
 </html>

@@ -14,6 +14,7 @@ $user = query("SELECT * FROM user WHERE id = $id")[0];
 if (isset($_POST['ubah'])) {
     if (ubah($_POST) > 0) {
         echo "";
+        header('location:customer.php');
     } else {
         echo 'user gagal ditambahkan!';
     }
@@ -64,7 +65,7 @@ if (isset($_POST['ubah'])) {
                 <hr>
                 <ul class="nav nav-pills flex-column mb-auto">
                     <li>
-                        <a href="#" class="nav-link nav-hov">
+                        <a href="index.php" class="nav-link nav-hov">
                             <i class="bi bi-speedometer2"></i>
                             Dashboard
                         </a>
@@ -76,7 +77,7 @@ if (isset($_POST['ubah'])) {
                         </a>
                     </li>
                     <li>
-                        <a href="#" class="nav-link nav-hov">
+                        <a href="customer.php" class="nav-link nav-hov">
                             <i class="bi bi-person-circle"></i>
                             Customers
                         </a>
@@ -100,8 +101,8 @@ if (isset($_POST['ubah'])) {
             </div>
         </div>
         <div class="col-9 w-50 mt-3">
-            <form method="POST">
-                <span class="fs-4 fw-bold text-white md-3">Tambah Data</span>
+            <form method="POST" enctype="multipart/form-data">
+                <span class="fs-4 fw-bold text-white md-3">Edit User</span>
                 <input type="hidden" class="form-control" id="id" name="id" value="<?= $user['id'] ?>">
 
                 <div class="mb-3">
@@ -117,8 +118,10 @@ if (isset($_POST['ubah'])) {
                     <input type="password" class="form-control" id="password" name="password" value="<?= $user['password'] ?>">
                 </div>
                 <div class="mb-3">
+                    <img src="../img/<?= $user['gambar'] ?>" alt="" width="100" height="100" class="img-preview">
                     <label for="gambar" class="form-label text-white">Gambar</label>
-                    <input type="file" class="form-control " id="gambar" name="gambar" value="<?= $user['gambar'] ?>">
+                    <input type="hidden" name="old_image" value="<?= $user['gambar'] ?>">
+                    <input type="file" class="form-control image" id="gambar" name="image" onchange="previewImage()">
                 </div>
                 <div class="mb-3">
                     <label for="id_role" class="form-label text-white">Id Role</label>
@@ -132,7 +135,19 @@ if (isset($_POST['ubah'])) {
 
 
 
+    <script>
+        function previewImage() {
+            const image = document.querySelector(".image");
+            const imgPreview = document.querySelector(".img-preview");
 
+            const oFReader = new FileReader();
+            oFReader.readAsDataURL(image.files[0]);
+
+            oFReader.onload = function(oFREvent) {
+                imgPreview.src = oFREvent.target.result;
+            };
+        }
+    </script>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous"></script>
 </body>
 

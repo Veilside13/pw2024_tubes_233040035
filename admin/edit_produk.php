@@ -7,9 +7,14 @@ require('../functions.php');
 //   header('location:../login.php');
 // }
 
-if (isset($_POST['tambah'])) {
-    if (tambah($_POST) > 0) {
+$id = $_GET['id_movie'];
+
+$movie = query("SELECT * FROM movie WHERE id_movie = $id")[0];
+
+if (isset($_POST['ubah'])) {
+    if (ubah_produk($_POST) > 0) {
         echo "";
+        header('location:produk.php');
     } else {
         echo 'user gagal ditambahkan!';
     }
@@ -66,7 +71,7 @@ if (isset($_POST['tambah'])) {
                         </a>
                     </li>
                     <li>
-                        <a href="#" class="nav-link nav-hov">
+                        <a href="produk.php" class="nav-link nav-hov">
                             <i class="bi bi-cart-plus"></i>
                             Products
                         </a>
@@ -97,34 +102,27 @@ if (isset($_POST['tambah'])) {
         </div>
         <div class="col-9 w-50 mt-3">
             <form method="POST" enctype="multipart/form-data">
-                <span class="fs-4 fw-bold text-white md-3">Tambah Data</span>
+                <span class="fs-4 fw-bold text-white md-3">Edit Produk</span>
+                <input type="hidden" class="form-control" id="id" name="id" value="<?= $movie['id_movie'] ?>">
 
                 <div class="mb-3">
-                    <label for="username" class="form-label text-white">Username</label>
-                    <input type="text" class="form-control" id="username" name="username" aria-describedby="emailHelp">
+                    <label for="judul" class="form-label text-white">Judul</label>
+                    <input type="text" class="form-control" id="judul" name="judul" value="<?= $movie['judul'] ?>">
                 </div>
                 <div class="mb-3">
-                    <label for="email" class="form-label text-white">Email</label>
-                    <input type="email" class="form-control" id="email" name="email">
+                    <label for="harga" class="form-label text-white">Harga</label>
+                    <input type="number" class="form-control" id="harga" name="harga" value="<?= $movie['harga'] ?>">
                 </div>
                 <div class="mb-3">
-                    <label for="password" class="form-label text-white">Password</label>
-                    <input type="password" class="form-control" id="password" name="password">
-                </div>
-                <div class="mb-3">
-                    <img src="" alt="" width="100" height="100" class="img-preview">
+                    <img src="../img/<?= $movie['gambar'] ?>" alt="" width="100" height="100" class="img-preview">
                     <label for="gambar" class="form-label text-white">Gambar</label>
+                    <input type="hidden" name="old_image" value="<?= $movie['gambar'] ?>">
                     <input type="file" class="form-control image" id="gambar" name="image" onchange="previewImage()">
                 </div>
-                <div class="mb-3">
-                    <label for="id_role" class="form-label text-white">Id Role</label>
-                    <input type="number" class="form-control" id="id_role" name="id_role">
-                </div>
-                <button type="submit" class="btn btn-primary" name="tambah">Submit</button>
+                <button type="submit" class="btn btn-primary" name="ubah">Submit</button>
             </form>
         </div>
     </div>
-
 
 
 

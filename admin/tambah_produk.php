@@ -8,7 +8,7 @@ require('../functions.php');
 // }
 
 if (isset($_POST['tambah'])) {
-    if (tambah($_POST) > 0) {
+    if (tambah_produk($_POST) > 0) {
         echo "";
     } else {
         echo 'user gagal ditambahkan!';
@@ -97,28 +97,20 @@ if (isset($_POST['tambah'])) {
         </div>
         <div class="col-9 w-50 mt-3">
             <form method="POST" enctype="multipart/form-data">
-                <span class="fs-4 fw-bold text-white md-3">Tambah Data</span>
+                <span class="fs-4 fw-bold text-white md-3">Tambah Produk</span>
 
                 <div class="mb-3">
-                    <label for="username" class="form-label text-white">Username</label>
-                    <input type="text" class="form-control" id="username" name="username" aria-describedby="emailHelp">
+                    <label for="judul" class="form-label text-white">Judul</label>
+                    <input type="text" class="form-control" id="judul" name="judul" aria-describedby="emailHelp">
                 </div>
                 <div class="mb-3">
-                    <label for="email" class="form-label text-white">Email</label>
-                    <input type="email" class="form-control" id="email" name="email">
-                </div>
-                <div class="mb-3">
-                    <label for="password" class="form-label text-white">Password</label>
-                    <input type="password" class="form-control" id="password" name="password">
+                    <label for="harga" class="form-label text-white">Harga</label>
+                    <input type="number" class="form-control" id="harga" name="harga">
                 </div>
                 <div class="mb-3">
                     <img src="" alt="" width="100" height="100" class="img-preview">
                     <label for="gambar" class="form-label text-white">Gambar</label>
                     <input type="file" class="form-control image" id="gambar" name="image" onchange="previewImage()">
-                </div>
-                <div class="mb-3">
-                    <label for="id_role" class="form-label text-white">Id Role</label>
-                    <input type="number" class="form-control" id="id_role" name="id_role">
                 </div>
                 <button type="submit" class="btn btn-primary" name="tambah">Submit</button>
             </form>

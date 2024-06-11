@@ -99,7 +99,7 @@ $user = query("SELECT * FROM user");
                         <div class="card-body d-flex flex-column align-items-center">
                             <i class="bi bi-cart-check-fill" style="font-size: 6rem;"></i>
                             <h5>Products</h5>
-                            <a href="#" class="btn btn-primary">View Details</a>
+                            <a href="produk.php" class="btn btn-primary">View Details</a>
                         </div>
                     </div>
                 </div>
@@ -108,7 +108,7 @@ $user = query("SELECT * FROM user");
                         <div class="card-body d-flex flex-column align-items-center">
                             <i class="bi bi-person-fill-check" style="font-size: 6rem;"></i>
                             <h5>Our Customers</h5>
-                            <a href="#" class="btn btn-primary">View Details</a>
+                            <a href="customer.php" class="btn btn-primary">View Details</a>
                         </div>
                     </div>
                 </div>
